@@ -321,6 +321,16 @@ net.Receive("Nebula.Damage:Broadcast", function()
         draw.SimpleText("Duration", NebulaUI:Font(16), w - w / 6, 2, Color(255, 255, 255, 100), 1, TEXT_ALIGN_TOP)
         draw.SimpleText(math.Round(duration, 1) .. "s", NebulaUI:Font(32), w - w / 6, 12, color_white, 1, TEXT_ALIGN_TOP)
     end
+
+    pnl.OnRemove = function()
+        if IsValid(NebulaUI.DeathPanel) then
+            NebulaUI.DeathPanel:MoveTo(ScrW() / 2 - 128, ScrH() - 196, 0.5, 0)
+        end
+    end
+    if IsValid(NebulaUI.DeathPanel) then
+        NebulaUI.DeathPanel:MoveTo(ScrW() / 2 - 128, ScrH() - 196 - 72, 0.5, 0)
+    end
+    NebulaUI.DamageUI = pnl
 end)
 
 local handlers = 0
