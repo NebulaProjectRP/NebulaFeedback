@@ -1,0 +1,5 @@
+"UnlitGeneric" {
+    "$basetexture" "nebularp/decals/pegasus"
+    "$vertexalpha" "1"
+    "$vertexcolor" "1"
+}
