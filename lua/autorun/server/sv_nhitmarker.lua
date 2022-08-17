@@ -110,6 +110,7 @@ hook.Add("PlayerDeath", "Nebula.Damage:Catcher", function(ply, inf, att)
 
     ply.AttackerHistory = {}
 
+    if not att:IsPlayer() then return end
     if (ply == att) then return end
 
     att.lifeKills = (att.lifeKills or 0) + 1
