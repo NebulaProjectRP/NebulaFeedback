@@ -427,6 +427,7 @@ net.Receive("Nebula.Damage:SendHitmark", function()
     local pl = LocalPlayer()
     if (dmg > ent:GetMaxHealth() / 2) then
         ent:EmitSound("Body.Splash")
+        /*
         if (pl:Ping() > 150) then
             local dist = pl:GetPos():Distance(ent:GetPos()) < 128
             if (dist) then
@@ -438,7 +439,6 @@ net.Receive("Nebula.Damage:SendHitmark", function()
                         return {
                             origin = ori,
                             angles = an,
-                            fov = baseFOV + extraFOV,
                             znear = zn
                         }
                     else
@@ -447,6 +447,7 @@ net.Receive("Nebula.Damage:SendHitmark", function()
                 end)
             end
         end
+        */
     end
 
     if (hitSound != "") then
