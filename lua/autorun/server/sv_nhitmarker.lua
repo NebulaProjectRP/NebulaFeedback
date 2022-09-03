@@ -96,6 +96,7 @@ hook.Add("PlayerDeathThink", "Gonzo", function(ply)
 end)
 
 hook.Add("PlayerDeath", "Nebula.Damage:Catcher", function(ply, inf, att)
+    if (ply:InArena()) then return end
 
     ply.fl_DeathTime = CurTime() + 60
     if NebulaDamage.History[ply] then
